@@ -1,0 +1,36 @@
+﻿<Window x:Class="Diplom.MechanicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom"
+        mc:Ignorable="d"
+        Title="MechanicWindow" Height="450" Width="800" Loaded="MechanicWindow_OnLoaded">
+    <Grid>
+        <TextBox x:Name="MechanikSecondName_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,89,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MechanikPhone_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MechanikExperience_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,170,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MechanikName_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,48,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="AddMechanik_Button" Content="Add" HorizontalAlignment="Left" Margin="12,292,0,0" VerticalAlignment="Top" Width="50" Click="AddMechanik_Button_Click"/>
+        <Button x:Name="EditMechanik_Button" Content="Edit" HorizontalAlignment="Left" Margin="78,292,0,0" VerticalAlignment="Top" Width="50" Click="EditMechanik_Button_Click"/>
+        <Button x:Name="DeleteMechanik_Button" Content="Delete" HorizontalAlignment="Left" Margin="144,292,0,0" VerticalAlignment="Top" Width="50" Click="DeleteMechanik_Button_Click"/>
+        <DataGrid x:Name="Mechanik_DataStorage" HorizontalAlignment="Left" Height="142" Margin="228,91,0,0" VerticalAlignment="Top" Width="276" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Mechanik_DataStorage_OnSelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Name"   Binding="{Binding Path = Name}"/>
+                <DataGridTextColumn Header="Second Name"   Binding="{Binding Path = SecondName}"/>
+                <DataGridTextColumn Header="Phone"  Binding="{Binding Path = PhoneNumber}"/>
+                <DataGridTextColumn Header="Work Experience" Binding="{Binding Path = WorkExperience}"/>
+                <DataGridTextColumn Header="Phone"  Binding="{Binding Path = LoginInfo.Login}"/>
+                <DataGridTextColumn Header="Work Experience" Binding="{Binding Path = LoginInfo.Password}"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="79,27,0,0" VerticalAlignment="Top"/>
+        <Label Content="Second Name" HorizontalAlignment="Left" Margin="60,68,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="79,109,0,0" VerticalAlignment="Top"/>
+        <Label Content="Experience" HorizontalAlignment="Left" Margin="70,149,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="MechanicLogin_TextBox" HorizontalAlignment="Left" Height="24" Margin="42,211,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="MechanicPassword_TextBox" HorizontalAlignment="Left" Height="24" Margin="42,251,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Login" HorizontalAlignment="Left" Margin="80,189,0,0" VerticalAlignment="Top"/>
+        <Label Content="Password" HorizontalAlignment="Left" Margin="70,231,0,0" VerticalAlignment="Top"/>
+    </Grid>
+</Window>
