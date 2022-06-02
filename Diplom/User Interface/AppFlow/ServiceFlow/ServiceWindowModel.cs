@@ -11,7 +11,7 @@ namespace Diplom.ServiceFlow
     public class ServiceWindowModel
     {
         public ServiceModel ServiceModel = new ServiceModel();
-        private readonly ServiceDbWorker _worker = new ServiceDbWorker();
+        private readonly DbWorker _worker = new DbWorker();
 
         public List<ServiceModel> GetServices()
         {

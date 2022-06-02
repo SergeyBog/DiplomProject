@@ -5,11 +5,12 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
         Title="MainWindow" Height="270" Width="300">
+
     <Grid>
         <TextBox x:Name="Login_TextBox" HorizontalAlignment="Left" Height="23" Margin="86,91,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="Password_TextBox" HorizontalAlignment="Left" Height="23" Margin="86,129,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
         <Label Content="Login" HorizontalAlignment="Left" Margin="124,60,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.237,0.654" Width="46"/>
-        <Button x:Name="Login_Button" Content="Submit" HorizontalAlignment="Left" Margin="110,166,0,0" VerticalAlignment="Top" Width="74" Click="Login_Button_Click"/>
+        <Button x:Name="Login_Button" Content="Submit" HorizontalAlignment="Left" Margin="110,166,0,0" VerticalAlignment="Top" Width="74" Click="Login_Button_Click" IsCancel="True"/>
 
     </Grid>
 </Window>

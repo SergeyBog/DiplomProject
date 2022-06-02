@@ -138,49 +138,45 @@
     <Compile Include="Car.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\CarFlow\CarDbWorker.cs" />
-    <Compile Include="Flows\CarFlow\CarWindow.xaml.cs">
+    <Compile Include="User Interface\AppFlow\OrderFlow\MainAppWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\OrderFlow\NewOrder\NewOrderWindow.xaml.cs">
+      <DependentUpon>NewOrderWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="User Interface\AppFlow\CarFlow\CarWindow.xaml.cs">
       <DependentUpon>CarWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Flows\CarFlow\CarWindowCoordinator.cs" />
-    <Compile Include="Flows\CarFlow\CarWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\CarFlow\CarWindowModel.cs" />
     <Compile Include="Client.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\ClientFlow\ClientDbWorker.cs" />
-    <Compile Include="Flows\ClientFlow\ClientWindow.xaml.cs">
+    <Compile Include="User Interface\AppFlow\ClientFlow\ClientWindow.xaml.cs">
       <DependentUpon>ClientWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Flows\ClientFlow\ClientWindowModel.cs" />
-    <Compile Include="Flows\ClientFlow\ClientWindowCoordinator.cs" />
+    <Compile Include="User Interface\AppFlow\ClientFlow\ClientWindowModel.cs" />
     <Compile Include="Client_Cars.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="DbWorker.cs" />
+    <Compile Include="User Interface\AppFlow\OrderFlow\NewOrder\NewOrderWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\OrderFlow\Order description\OrderDescriptionWindow.xaml.cs">
+      <DependentUpon>OrderDescriptionWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\DbWorker.cs" />
     <Compile Include="Description.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\OrderFlow\OrderDbWorker.cs" />
-    <Compile Include="Flows\OrderFlow\OrderWindow.xaml.cs">
-      <DependentUpon>OrderWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Flows\OrderFlow\OrderWindowCoordinator.cs" />
-    <Compile Include="Flows\OrderFlow\OrderWindowModel.cs" />
     <Compile Include="Login_Info.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\AppFlow\MainAppWindow.xaml.cs">
+    <Compile Include="User Interface\AppFlow\OrderFlow\MainAppWindow.xaml.cs">
       <DependentUpon>MainAppWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Mechanic.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\MechanicFlow\MechanicDbWorker.cs" />
-    <Compile Include="Flows\MechanicFlow\MechanicWindow.xaml.cs">
+    <Compile Include="User Interface\AppFlow\MechanicFlow\MechanicWindow.xaml.cs">
       <DependentUpon>MechanicWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Flows\MechanicFlow\MechanicWindowCoordinator.cs" />
-    <Compile Include="Flows\MechanicFlow\MechanicWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\MechanicFlow\MechanicWindowModel.cs" />
     <Compile Include="Models\AdminModel.cs" />
     <Compile Include="Models\CarModel.cs" />
     <Compile Include="Models\ClientModel.cs" />
@@ -196,25 +192,22 @@
     <Compile Include="Service.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\ServiceFlow\ServiceDbWorker.cs" />
-    <Compile Include="Flows\ServiceFlow\ServiceWindow.xaml.cs">
+    <Compile Include="User Interface\AppFlow\OrderFlow\Order description\OrderDescriptionWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\ServiceFlow\ServiceWindow.xaml.cs">
       <DependentUpon>ServiceWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Flows\ServiceFlow\ServiceWindowCoordinator.cs" />
-    <Compile Include="Flows\ServiceFlow\ServiceWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\ServiceFlow\ServiceWindowModel.cs" />
     <Compile Include="Service_Done.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Spare.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\SpareFlow\SpareDbWorker.cs" />
-    <Compile Include="Flows\SpareFlow\SpareWindowCoordinator.cs" />
-    <Compile Include="Flows\SpareFlow\SpareWindowModel.cs" />
+    <Compile Include="User Interface\AppFlow\SpareFlow\SpareWindowModel.cs" />
     <Compile Include="Spares_Used.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Flows\SpareFlow\SpareWindow.xaml.cs">
+    <Compile Include="User Interface\AppFlow\SpareFlow\SpareWindow.xaml.cs">
       <DependentUpon>SpareWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="StoModel.Context.cs">
@@ -235,19 +228,23 @@
     <Compile Include="sysdiagrams.cs">
       <DependentUpon>StoModel.tt</DependentUpon>
     </Compile>
-    <Page Include="Flows\CarFlow\CarWindow.xaml">
+    <Page Include="User Interface\AppFlow\OrderFlow\NewOrder\NewOrderWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Flows\ClientFlow\ClientWindow.xaml">
+    <Page Include="User Interface\AppFlow\CarFlow\CarWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Flows\AppFlow\MainAppWindow.xaml">
+    <Page Include="User Interface\AppFlow\ClientFlow\ClientWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Flows\OrderFlow\OrderWindow.xaml">
+    <Page Include="User Interface\AppFlow\OrderFlow\MainAppWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="User Interface\AppFlow\OrderFlow\Order description\OrderDescriptionWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -263,15 +260,15 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Flows\MechanicFlow\MechanicWindow.xaml">
+    <Page Include="User Interface\AppFlow\MechanicFlow\MechanicWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Flows\ServiceFlow\ServiceWindow.xaml">
+    <Page Include="User Interface\AppFlow\ServiceFlow\ServiceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Flows\SpareFlow\SpareWindow.xaml">
+    <Page Include="User Interface\AppFlow\SpareFlow\SpareWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

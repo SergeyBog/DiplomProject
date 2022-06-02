@@ -12,7 +12,9 @@ namespace Diplom.Models
         public string Name { get; set; }
         public string SecondName { get; set; }
         public string PhoneNumber { get; set; }
+        public string FullName => $"{Name} {SecondName}";
 
         public List<CarModel> CarList = new List<CarModel>();
+
     }
 }

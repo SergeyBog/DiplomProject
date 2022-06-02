@@ -9,10 +9,10 @@ namespace Diplom.Models
     public class OrderModel
     {
         public int Id { get; set; }
-        public int ClientId { get; set; }
-        public int CarId { get; set; }
-        public int MechanicId { get; set; }
-        public int DescriptionId { get; set; }
+        public ClientModel Client { get; set; }
+        public CarModel Car { get; set; }
+        public MechanicModel Mechanic { get; set; }
+        public DescriptionModel Description { get; set; }
         public string DateStart { get; set; }
         public string DateEnd { get; set; }
     }

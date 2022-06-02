@@ -10,7 +10,7 @@ namespace Diplom.CarFlow
     public class CarWindowModel
     {
         public CarModel CarModel = new CarModel();
-        private readonly CarDbWorker _worker = new CarDbWorker();
+        private readonly DbWorker _worker = new DbWorker();
 
         public List<CarModel> GetCars()
         {

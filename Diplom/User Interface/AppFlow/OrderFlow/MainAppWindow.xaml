@@ -1,0 +1,33 @@
+﻿<Window x:Class="Diplom.MainAppWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Diplom"
+        mc:Ignorable="d"
+        Title="MainAppWindow" Height="410" Width="500" Closed="MainAppWindow_OnClosed" Loaded="MainAppWindow_OnLoaded">
+    <Grid>
+        <Label x:Name="UserInfo_Label" Content="ss" HorizontalAlignment="Left" Margin="323,28,0,0" VerticalAlignment="Top" Width="148"/>
+        <Button x:Name="PresentCarWindow_Button" Content="To Car" HorizontalAlignment="Left" Margin="381,116,0,0" VerticalAlignment="Top" Width="75" Click="PresentCarWindow_Button_Click"/>
+        <Button x:Name="PresentClientWindow_Button" Content="To Client" HorizontalAlignment="Left" Margin="381,77,0,0" VerticalAlignment="Top" Width="75" Click="PresentClientWindow_Button_Click"/>
+        <Button x:Name="PresentSpareWindow_Button" Content="To Spare" HorizontalAlignment="Left" Margin="381,154,0,0" VerticalAlignment="Top" Width="75" Click="PresentSpareWindow_Button_Click"/>
+        <Button x:Name="PresentServiceWindow_Button" Content="To Service" HorizontalAlignment="Left" Margin="142,321,0,0" VerticalAlignment="Top" Width="75" Click="PresentServiceWindow_Button_Click"/>
+        <Button x:Name="PresentMechanicWindow" Content="To Mechanic" HorizontalAlignment="Left" Margin="381,191,0,0" VerticalAlignment="Top" Width="76" Click="PresentMechanicWindow_Click"/>
+        <DataGrid Name="OrderDataStorage"  HorizontalAlignment="Left" Height="191" Margin="10,77,0,0" VerticalAlignment="Top" Width="352" SelectionChanged="OrderDataStorage_OnSelectionChanged" IsReadOnly="True" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Client"   Binding="{Binding Path = Client.FullName}"/>
+                <DataGridTextColumn Header="Car"   Binding="{Binding Path = Car.FullName}"/>
+                <DataGridTextColumn Header="Mechanic"   Binding="{Binding Path = Mechanic.FullName}"/>
+                <DataGridTextColumn Header="Date Start"   Binding="{Binding Path = DateStart}"/>
+                <DataGridTextColumn Header="Date End"   Binding="{Binding Path = DateEnd}"/>
+
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button Content="Add new order" Name="AddOrderButton" HorizontalAlignment="Left" Margin="10,284,0,0" VerticalAlignment="Top" Width="94" Click="AddOrderButton_Click"/>
+        <Label Content="Orders" HorizontalAlignment="Left" Margin="174,46,0,0" VerticalAlignment="Top" Width="57"/>
+        <Button Name="SeeDetailsButton" Content="See details of order" HorizontalAlignment="Left" Margin="247,284,0,0" VerticalAlignment="Top" Width="115" Click="SeeDetailsButton_Click"/>
+        <Label x:Name="UserInfo_Label_Copy" Content="" HorizontalAlignment="Left" Margin="323,28,0,0" VerticalAlignment="Top" Width="148"/>
+        <Button Name="DeleteOrderButton" Content="Delete Order" HorizontalAlignment="Left" Margin="142,284,0,0" VerticalAlignment="Top" Width="75" Click="DeleteOrderButton_Click"/>
+
+    </Grid>
+</Window>

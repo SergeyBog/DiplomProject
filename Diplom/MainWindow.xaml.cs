@@ -21,8 +21,8 @@ namespace Diplom
         public MainWindow()
         {
             InitializeComponent();
-            Login_TextBox.Text = "admin";
-            Password_TextBox.Text = "123456";
+            Login_TextBox.Text = "apostol@gmail.com";
+            Password_TextBox.Text = "1234567";
         }
 
         private void Login_Button_Click(object sender, RoutedEventArgs e)
@@ -34,16 +34,20 @@ namespace Diplom
                 {
                     if (worker.GetUserType(Login_TextBox.Text, Password_TextBox.Text) == "admin")
                     {
-                        CleanInputs();
                         var form = new MainAppWindow() { Owner = this };
                         form.UserType = "admin";
+                        form.UserName = worker.GetAdmin(Login_TextBox.Text, Password_TextBox.Text).Name;
+                        form.UserSecondName = worker.GetAdmin(Login_TextBox.Text, Password_TextBox.Text).SecondName;
+                        CleanInputs();
                         form.ShowDialog();
                     }
                     else
                     {
-                        CleanInputs();
                         var form = new MainAppWindow() { Owner = this };
                         form.UserType = "mechanic";
+                        form.UserName = worker.GetMechanic(Login_TextBox.Text, Password_TextBox.Text).Name;
+                        form.UserSecondName = worker.GetMechanic(Login_TextBox.Text, Password_TextBox.Text).SecondName;
+                        CleanInputs();
                         form.ShowDialog();
                     }
                 }

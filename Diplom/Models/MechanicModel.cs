@@ -14,5 +14,6 @@ namespace Diplom.Models
         public string PhoneNumber { get; set; }
         public string WorkExperience { get; set; }
         public LoginInfoModel LoginInfo { get; set; }
+        public string FullName => $"{Name} {SecondName}";
     }
 }

@@ -13,6 +13,6 @@ namespace Diplom.Models
         public string Model { get; set; }
         public string Year { get; set; }
         public string LastTo { get; set; }
-
+        public string FullName => $"{Mark} {Model}";
     }
 }

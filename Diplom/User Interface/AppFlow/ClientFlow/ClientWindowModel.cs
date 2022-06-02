@@ -10,7 +10,7 @@ namespace Diplom.ClientFlow
     public class ClientWindowModel
     {
         public ClientModel ClientModel = new ClientModel();
-        private readonly ClientDbWorker _worker = new ClientDbWorker();
+        private readonly DbWorker _worker = new DbWorker();
 
         public void GetDataForModel(string name,string secondName,string phone)
         {
@@ -18,6 +18,7 @@ namespace Diplom.ClientFlow
             ClientModel.SecondName = secondName;
             ClientModel.PhoneNumber = phone;
         }
+
         public List<ClientModel> GetClients()
         {
             return _worker.GetClients();

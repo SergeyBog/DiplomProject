@@ -10,7 +10,7 @@ namespace Diplom.SpareFlow
     public class SpareWindowModel
     {
         public SpareModel SpareModel = new SpareModel();
-        private readonly SpareDbWorker _worker = new SpareDbWorker();
+        private readonly DbWorker _worker = new DbWorker();
 
         public List<SpareModel> GetSpares()
         {

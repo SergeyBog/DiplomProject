@@ -9,8 +9,9 @@ namespace Diplom.MechanicFlow
 {
     public class MechanicWindowModel
     {
-        private readonly MechanicDbWorker _worker = new MechanicDbWorker();
         public MechanicModel MechanicModel = new MechanicModel();
+        private readonly DbWorker _worker = new DbWorker();
+
         public List<MechanicModel> GetMechanics()
         {
             var result = _worker.GetMechanics();
