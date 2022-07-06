@@ -291,6 +291,10 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="Diplom Files\ІТ-82_Богаченко_Відгук.pdf" />
+    <None Include="Diplom Files\ІТ-82_Богаченко_Рецензія.pdf" />
+    <None Include="Diplom Files\Дипломна Робота Богаченко.pdf" />
+    <None Include="Diplom Files\Презентація Диплома.pptm" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
