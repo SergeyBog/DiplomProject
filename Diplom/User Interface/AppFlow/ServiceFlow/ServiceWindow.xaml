@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="ServiceWindow" Height="450" Width="800" Loaded="ServiceWindow_OnLoaded">
+        Title="ServiceWindow" Height="350" Width="450" Loaded="ServiceWindow_OnLoaded">
     <Grid>
-        <TextBox x:Name="ServiceNaming_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ServiceCost_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Label Content="Naming" HorizontalAlignment="Left" Margin="78,141,0,0" VerticalAlignment="Top"/>
-        <Label Content="Cost" HorizontalAlignment="Left" Margin="86,187,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="AddService_Button" Content="Add" HorizontalAlignment="Left" Margin="11,254,0,0" VerticalAlignment="Top" Width="50" Click="AddService_Button_Click"/>
-        <Button x:Name="EditService_Button" Content="Edit" HorizontalAlignment="Left" Margin="77,254,0,0" VerticalAlignment="Top" Width="50" Click="EditService_Button_Click"/>
-        <Button x:Name="DeleteService_Button" Content="Delete" HorizontalAlignment="Left" Margin="143,254,0,0" VerticalAlignment="Top" Width="50" Click="DeleteService_Button_Click"/>
-        <DataGrid x:Name="Service_DataStorage" HorizontalAlignment="Left" Height="142" Margin="260,123,0,0" VerticalAlignment="Top" Width="194" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Service_DataStorage_OnSelectionChanged">
+        <TextBox x:Name="ServiceNaming_TextBox" HorizontalAlignment="Left" Height="23" Margin="289,107,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ServiceCost_TextBox" HorizontalAlignment="Left" Height="23" Margin="289,156,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Naming" HorizontalAlignment="Left" Margin="323,84,0,0" VerticalAlignment="Top"/>
+        <Label Content="Cost" HorizontalAlignment="Left" Margin="331,130,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="AddService_Button" Content="Add" HorizontalAlignment="Left" Margin="75,245,0,0" VerticalAlignment="Top" Width="50" Click="AddService_Button_Click"/>
+        <Button x:Name="EditService_Button" Content="Edit" HorizontalAlignment="Left" Margin="147,245,0,0" VerticalAlignment="Top" Width="50" Click="EditService_Button_Click"/>
+        <Button x:Name="DeleteService_Button" Content="Delete" HorizontalAlignment="Left" Margin="219,245,0,0" VerticalAlignment="Top" Width="50" Click="DeleteService_Button_Click"/>
+        <DataGrid x:Name="Service_DataStorage" HorizontalAlignment="Left" Height="142" Margin="75,80,0,0" VerticalAlignment="Top" Width="194" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Service_DataStorage_OnSelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naming"   Binding="{Binding Path = Naming}"/>
                 <DataGridTextColumn Header="Cost"   Binding="{Binding Path = Cost}"/>

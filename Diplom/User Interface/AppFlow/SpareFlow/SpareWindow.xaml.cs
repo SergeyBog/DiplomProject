@@ -16,9 +16,6 @@ using Diplom.SpareFlow;
 
 namespace Diplom
 {
-    /// <summary>
-    /// Логика взаимодействия для SpareWindow.xaml
-    /// </summary>
     public partial class SpareWindow : Window
     {
         private readonly  SpareWindowModel _spareWindowModel = new SpareWindowModel();

@@ -1,24 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Diplom.Models;
 using Diplom.User_Interface.AppFlow.OrderFlow.Order_description;
 
 namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
 {
-    /// <summary>
-    /// Логика взаимодействия для OrderDescriptionWindow.xaml
-    /// </summary>
     public partial class OrderDescriptionWindow : Window
     {
         private readonly OrderDescriptionWindowModel _orderDescriptionWindowModel = new OrderDescriptionWindowModel();
@@ -28,7 +15,6 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
         public OrderDescriptionWindow()
         {
             InitializeComponent();
-            LoadData();
         }
 
         private void OrderDescriptionWindow_OnLoaded(object sender, RoutedEventArgs e)
@@ -36,13 +22,8 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
             _orderDescriptionWindowModel.GetMechanic(UserName, UserSecondName);
             UserNameInfo.Content = UserName + " " + UserSecondName;
             _orderDescriptionWindowModel.OrderModel = OrderData;
+            LoadData();
 
-        }
-
-        public void LoadOrderSelection()
-        {
-            ////edit
-            _orderDescriptionWindowModel.LoadData();
         }
 
         private void OrderDescriptionWindow_OnClosed(object sender, EventArgs e)
@@ -56,10 +37,20 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
             ClientCarsComboBox.ItemsSource = null;
             SpareDataStorage.ItemsSource = null;
             ServiceDataStorage.ItemsSource = null;
+            SpareInOrderDataStorage.ItemsSource = null;
+            ServiceInOrderDataStorage.ItemsSource = null;
+
             ClientsComboBox.ItemsSource = _orderDescriptionWindowModel.GetClients();
             SpareDataStorage.ItemsSource = _orderDescriptionWindowModel.GetSpares();
             ServiceDataStorage.ItemsSource = _orderDescriptionWindowModel.GetServices();
+            ServiceInOrderDataStorage.ItemsSource = _orderDescriptionWindowModel.GetServicesInOrder();
+            SpareInOrderDataStorage.ItemsSource = _orderDescriptionWindowModel.GetSparesInOrder();
+            DescriptionTextBox.Text = _orderDescriptionWindowModel.OrderModel.Description.Description;
+            DateStartPicker.SelectedDate = Convert.ToDateTime(_orderDescriptionWindowModel.OrderModel.DateStart);
+            DateEndPicker.SelectedDate = Convert.ToDateTime(_orderDescriptionWindowModel.OrderModel.DateEnd);
+            UpdatePrice();
         }
+
 
         private void EditOrderButton_Click(object sender, RoutedEventArgs e)
         {
@@ -68,23 +59,11 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
             {
                 return;
             }
-
-
-        }
-
-        private void AddOrderButton_Click(object sender, RoutedEventArgs e)
-        {
-            if (ClientsComboBox.SelectedItem != null && ClientCarsComboBox.SelectedItem != null &&
-                DateStartPicker.Text == "" && DateEndPicker.Text == "" && DescriptionTextBox.Text == "" && ServiceInOrderDataStorage.Items.Count == 0)
-            {
-                return;
-            }
-
-            /*_newOrderWindowModel.DescriptionModel.Description = DescriptionTextBox.Text;
-            _newOrderWindowModel.OrderModel.DateStart = DateStartPicker.SelectedDate.ToString();
-            _newOrderWindowModel.OrderModel.DateEnd = DateEndPicker.SelectedDate.ToString();
-            _newOrderWindowModel.AddOrderToDataBase();
-            ResetData();*/
+            _orderDescriptionWindowModel.OrderModel.Description.Description = DescriptionTextBox.Text;
+            _orderDescriptionWindowModel.OrderModel.DateStart = DateStartPicker.SelectedDate.ToString();
+            _orderDescriptionWindowModel.OrderModel.DateEnd = DateEndPicker.SelectedDate.ToString();
+            _orderDescriptionWindowModel.EditOrder();
+            //ResetData();
         }
 
         private void ClientsComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -93,7 +72,7 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
             {
                 return;
             }
-            _orderDescriptionWindowModel.ClientModel = ClientsComboBox.SelectedItem as ClientModel;
+            _orderDescriptionWindowModel.OrderModel.Client = ClientsComboBox.SelectedItem as ClientModel;
             ClientCarsComboBox.ItemsSource = null;
             ClientCarsComboBox.ItemsSource = _orderDescriptionWindowModel.GetClientCars();
         }
@@ -104,7 +83,7 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
             {
                 return;
             }
-            _orderDescriptionWindowModel.CarModel = ClientCarsComboBox.SelectedItem as CarModel;
+            _orderDescriptionWindowModel.OrderModel.Car = ClientCarsComboBox.SelectedItem as CarModel;
         }
 
         private void AddServiceToOrderButton_OnClick(object sender, RoutedEventArgs e)
@@ -175,5 +154,6 @@ namespace Diplom.Flows.AppFlow.OrderFlow.Order_description
             ServiceInOrderDataStorage.ItemsSource = null;
             TotalCostLabel.Content = "";
         }
+
     }
 }

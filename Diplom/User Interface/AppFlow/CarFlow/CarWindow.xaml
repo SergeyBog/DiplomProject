@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="CarWindow" Height="450" Width="800" Loaded="CarWindow_OnLoaded">
+        Title="CarWindow" Height="350" Width="500" Loaded="CarWindow_OnLoaded">
     <Grid>
-        <TextBox x:Name="CarModel_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CarYear_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CarLastTO_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,249,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="CarMark_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,127,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <Button x:Name="AddCar_Button" Content="Add" HorizontalAlignment="Left" Margin="12,292,0,0" VerticalAlignment="Top" Width="50" Click="AddCar_Button_Click"/>
-        <Button x:Name="EditCar_Button" Content="Edit" HorizontalAlignment="Left" Margin="78,292,0,0" VerticalAlignment="Top" Width="50" Click="EditCar_Button_Click"/>
-        <Button x:Name="DeleteCar_Button" Content="Delete" HorizontalAlignment="Left" Margin="144,292,0,0" VerticalAlignment="Top" Width="50" Click="DeleteCar_Button_Click"/>
-        <DataGrid x:Name="Car_DataStorage" HorizontalAlignment="Left" Height="142" Margin="196,112,0,0" VerticalAlignment="Top" Width="188" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Car_DataStorage_OnSelectionChanged">
+        <TextBox x:Name="CarModel_TextBox" HorizontalAlignment="Left" Height="23" Margin="302,131,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CarYear_TextBox" HorizontalAlignment="Left" Height="23" Margin="302,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CarLastTO_TextBox" HorizontalAlignment="Left" Height="23" Margin="302,216,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="CarMark_TextBox" HorizontalAlignment="Left" Height="23" Margin="302,88,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="AddCar_Button" Content="Add" HorizontalAlignment="Left" Margin="89,251,0,0" VerticalAlignment="Top" Width="50" Click="AddCar_Button_Click"/>
+        <Button x:Name="EditCar_Button" Content="Edit" HorizontalAlignment="Left" Margin="161,251,0,0" VerticalAlignment="Top" Width="50" Click="EditCar_Button_Click"/>
+        <Button x:Name="DeleteCar_Button" Content="Delete" HorizontalAlignment="Left" Margin="227,251,0,0" VerticalAlignment="Top" Width="50" Click="DeleteCar_Button_Click"/>
+        <DataGrid x:Name="Car_DataStorage" HorizontalAlignment="Left" Height="142" Margin="89,87,0,0" VerticalAlignment="Top" Width="188" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Car_DataStorage_OnSelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Mark"   Binding="{Binding Path = Mark}"/>
                 <DataGridTextColumn Header="Model"   Binding="{Binding Path = Model}"/>
@@ -22,10 +22,10 @@
                 <DataGridTextColumn Header="LastTO" Binding="{Binding Path = LastTO}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Label Content="Mark" HorizontalAlignment="Left" Margin="78,104,0,0" VerticalAlignment="Top"/>
-        <Label Content="Model" HorizontalAlignment="Left" Margin="76,146,0,0" VerticalAlignment="Top"/>
-        <Label Content="Year" HorizontalAlignment="Left" Margin="83,187,0,0" VerticalAlignment="Top"/>
-        <Label Content="Last TO" HorizontalAlignment="Left" Margin="77,227,0,0" VerticalAlignment="Top"/>
+        <Label Content="Mark" HorizontalAlignment="Left" Margin="336,61,0,0" VerticalAlignment="Top"/>
+        <Label Content="Model" HorizontalAlignment="Left" Margin="334,109,0,0" VerticalAlignment="Top"/>
+        <Label Content="Year" HorizontalAlignment="Left" Margin="341,150,0,0" VerticalAlignment="Top"/>
+        <Label Content="Last TO" HorizontalAlignment="Left" Margin="335,194,0,0" VerticalAlignment="Top"/>
 
     </Grid>
 </Window>

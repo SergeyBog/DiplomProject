@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using Diplom.Models;
@@ -10,10 +11,6 @@ namespace Diplom.User_Interface.AppFlow.OrderFlow.Order_description
     public class OrderDescriptionWindowModel
     {
         public OrderModel OrderModel = new OrderModel();
-        public ClientModel ClientModel = new ClientModel();
-        public CarModel CarModel = new CarModel();
-        public MechanicModel MechanicModel = new MechanicModel();
-        public DescriptionModel DescriptionModel = new DescriptionModel();
         private readonly DbWorker _worker = new DbWorker();
         public List<SpareModel> SparesOrderList = new List<SpareModel>();
         public List<ServiceModel> ServicesOrderList = new List<ServiceModel>();
@@ -35,16 +32,18 @@ namespace Diplom.User_Interface.AppFlow.OrderFlow.Order_description
 
         public List<CarModel> GetClientCars()
         {
-            return _worker.GetClientCars(ClientModel);
+            return _worker.GetClientCars(OrderModel.Client);
         }
 
         public List<SpareModel> GetSparesInOrder()
         {
+            SparesOrderList = _worker.GetSpareDoneForOrder(OrderModel.Description.Id);
             return _worker.GetSpareDoneForOrder(OrderModel.Description.Id);
         }
 
         public List<ServiceModel> GetServicesInOrder()
         {
+            ServicesOrderList = _worker.GetServiceDoneForOrder(OrderModel.Description.Id);
             return _worker.GetServiceDoneForOrder(OrderModel.Description.Id);
         }
 
@@ -58,49 +57,37 @@ namespace Diplom.User_Interface.AppFlow.OrderFlow.Order_description
             SparesOrderList.RemoveAt(index);
         }
 
-        public void AddOrderToDataBase()
+        public void EditOrder()
         {
-            CreateDescription();
-            GetDescriptionId();
+           // GetDescriptionId();
+            EditDescription();
             AddServicesAndSparesToDb();
-            _worker.AddOrderToDb(OrderModel);
+            _worker.EditOrder(OrderModel);
         }
 
-        public void GetDescriptionId()
+        private void AddServicesAndSparesToDb()
         {
-            OrderModel.Description = _worker.GetOrderDescription(DescriptionModel.Description);
-            OrderModel.Client = ClientModel;
-            OrderModel.Car = CarModel;
-            OrderModel.Mechanic = MechanicModel;
-        }
-
-        public void AddServicesAndSparesToDb()
-        {
-            _worker.AddSparesToOrder(SparesOrderList, _worker.GetOrderDescription(DescriptionModel.Description).Id);
-            _worker.AddServicesToOrder(ServicesOrderList, _worker.GetOrderDescription(DescriptionModel.Description).Id);
+            _worker.DeleteSparesFromOrder(OrderModel.Description.Id);
+            _worker.DeleteServicesFromOrder(OrderModel.Description.Id);
+            _worker.AddSparesToOrder(SparesOrderList, OrderModel.Description.Id);
+            _worker.AddServicesToOrder(ServicesOrderList, OrderModel.Description.Id);
         }
 
         public void GetMechanic(string name, string secondName)
         {
-            MechanicModel = _worker.GetMechanicForName(name, secondName);
+            OrderModel.Mechanic = _worker.GetMechanicForName(name, secondName);
         }
 
-        public void CreateDescription()
+        private void EditDescription()
         {
-            DescriptionModel.CarId = CarModel.Id;
-            DescriptionModel.MechanicId = MechanicModel.Id;
-            _worker.AddDescriptionToDataBase(DescriptionModel);
+            OrderModel.Description.CarId = OrderModel.Car.Id;
+            OrderModel.Description.MechanicId = OrderModel.Mechanic.Id;
+            _worker.EditDescription(OrderModel.Description);
         }
 
         public int CountTotalPrice()
         {
             return ServicesOrderList.Sum(service => service.Cost) + SparesOrderList.Sum(selector: spare => spare.Cost);
-        }
-
-        public void LoadData()
-        {
-            SparesOrderList = GetSparesInOrder();
-            ServicesOrderList = GetServicesInOrder();
         }
     }
 }

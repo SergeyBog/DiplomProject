@@ -16,9 +16,6 @@ using Diplom.ServiceFlow;
 
 namespace Diplom
 {
-    /// <summary>
-    /// Логика взаимодействия для ServiceWindow.xaml
-    /// </summary>
     public partial class ServiceWindow : Window
     {
         private readonly ServiceWindowModel _serviceWindowModel = new ServiceWindowModel();

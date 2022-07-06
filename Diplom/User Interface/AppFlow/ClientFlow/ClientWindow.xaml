@@ -5,9 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="ClientWindow" Height="450" Width="800" Loaded="ClientWindow_OnLoaded">
+        Title="ClientWindow" Height="360" Width="800" Loaded="ClientWindow_OnLoaded">
     <Grid>
-        <DataGrid x:Name="Client_DataStorage" HorizontalAlignment="Left" Height="142" Margin="196,112,0,0" VerticalAlignment="Top" Width="227" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Client_DataStorage_OnSelectionChanged">
+        <DataGrid x:Name="Client_DataStorage" HorizontalAlignment="Left" Height="142" Margin="56,98,0,0" VerticalAlignment="Top" Width="227" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Client_DataStorage_OnSelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name"   Binding="{Binding Path = Name}"/>
                 <DataGridTextColumn Header="SecondName"   Binding="{Binding Path = SecondName}"/>
@@ -15,10 +15,10 @@
             </DataGrid.Columns>
         </DataGrid>
 
-        <TextBox x:Name="ClientName_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,144,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ClientSecondName_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,189,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <TextBox x:Name="ClientPhone_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,231,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-        <ComboBox x:Name="ClientCars_ComboBox" HorizontalAlignment="Left" Margin="474,112,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.188,1.386" SelectionChanged="ClientCars_ComboBox_OnSelectionChanged">
+        <TextBox x:Name="ClientName_TextBox" HorizontalAlignment="Left" Height="23" Margin="292,122,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ClientSecondName_TextBox" HorizontalAlignment="Left" Height="23" Margin="292,167,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="ClientPhone_TextBox" HorizontalAlignment="Left" Height="23" Margin="292,209,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <ComboBox x:Name="ClientCars_ComboBox" HorizontalAlignment="Left" Margin="429,116,0,0" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.188,1.386" SelectionChanged="ClientCars_ComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -29,17 +29,17 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Button x:Name="AddClient_Button" Content="Add" HorizontalAlignment="Left" Margin="10,269,0,0" VerticalAlignment="Top" Width="50" Click="AddClient_Button_Click"/>
-        <Button x:Name="DeleteClient_Button" Content="Delete" HorizontalAlignment="Left" Margin="142,269,0,0" VerticalAlignment="Top" Width="50" Click="DeleteClient_Button_Click"/>
-        <Button x:Name="EditClient_Button" Content="Edit" HorizontalAlignment="Left" Margin="76,269,0,0" VerticalAlignment="Top" Width="50" Click="EditClient_Button_Click"/>
-        <Label Content="Name" HorizontalAlignment="Left" Margin="44,120,0,0" VerticalAlignment="Top"/>
-        <Label Content="SecondName" HorizontalAlignment="Left" Margin="44,166,0,0" VerticalAlignment="Top"/>
-        <Label Content="Phone" HorizontalAlignment="Left" Margin="44,209,0,0" VerticalAlignment="Top"/>
-        <Label Content="Client Info" HorizontalAlignment="Left" Margin="281,86,0,0" VerticalAlignment="Top"/>
-        <Label Content="Client Cars" HorizontalAlignment="Left" Margin="500,88,0,0" VerticalAlignment="Top"/>
-        <Label Content="Car Info" HorizontalAlignment="Left" Margin="566,62,0,0" VerticalAlignment="Top"/>
-        <Button x:Name="Delink__Button" Content="Delink" HorizontalAlignment="Left" Margin="476,149,0,0" VerticalAlignment="Top" Width="75" Click="Delink_Button_Click"/>
-        <ComboBox Name="Cars_ComboBox"  HorizontalAlignment="Left" Margin="617,112,0,0" VerticalAlignment="Top" Width="120">
+        <Button x:Name="AddClient_Button" Content="Add" HorizontalAlignment="Left" Margin="75,249,0,0" VerticalAlignment="Top" Width="50" Click="AddClient_Button_Click"/>
+        <Button x:Name="DeleteClient_Button" Content="Delete" HorizontalAlignment="Left" Margin="207,249,0,0" VerticalAlignment="Top" Width="50" Click="DeleteClient_Button_Click"/>
+        <Button x:Name="EditClient_Button" Content="Edit" HorizontalAlignment="Left" Margin="141,249,0,0" VerticalAlignment="Top" Width="50" Click="EditClient_Button_Click"/>
+        <Label Content="Name" HorizontalAlignment="Left" Margin="292,98,0,0" VerticalAlignment="Top"/>
+        <Label Content="SecondName" HorizontalAlignment="Left" Margin="292,144,0,0" VerticalAlignment="Top"/>
+        <Label Content="Phone" HorizontalAlignment="Left" Margin="292,187,0,0" VerticalAlignment="Top"/>
+        <Label Content="Client Info" HorizontalAlignment="Left" Margin="141,72,0,0" VerticalAlignment="Top"/>
+        <Label Content="Client Cars" HorizontalAlignment="Left" Margin="455,92,0,0" VerticalAlignment="Top"/>
+        <Label Content="Car Info" HorizontalAlignment="Left" Margin="521,66,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Delink__Button" Content="Delink" HorizontalAlignment="Left" Margin="431,153,0,0" VerticalAlignment="Top" Width="75" Click="Delink_Button_Click"/>
+        <ComboBox Name="Cars_ComboBox"  HorizontalAlignment="Left" Margin="572,116,0,0" VerticalAlignment="Top" Width="120">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -51,8 +51,8 @@
             </ComboBox.ItemTemplate>
         </ComboBox>
         <Label Content="Cars
-               " HorizontalAlignment="Left" Margin="652,90,0,0" VerticalAlignment="Top"/>
-        <Button Name="Link_Button"  Content="Link" HorizontalAlignment="Left" Margin="662,151,0,0" VerticalAlignment="Top" Width="76" Click="Link_Button_Click"/>
+               " HorizontalAlignment="Left" Margin="607,94,0,0" VerticalAlignment="Top"/>
+        <Button Name="Link_Button"  Content="Link" HorizontalAlignment="Left" Margin="617,155,0,0" VerticalAlignment="Top" Width="76" Click="Link_Button_Click"/>
 
     </Grid>
 </Window>

@@ -5,17 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom"
         mc:Ignorable="d"
-        Title="SpareWindow" Height="450" Width="800" Loaded="SpareWindow_OnLoaded">
+        Title="SpareWindow" Height="350" Width="450" Loaded="SpareWindow_OnLoaded">
     <Grid>
         <Grid>
-            <TextBox x:Name="SpareNaming_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,164,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="SpareCost_TextBox" HorizontalAlignment="Left" Height="23" Margin="44,213,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <Label Content="Naming" HorizontalAlignment="Left" Margin="78,141,0,0" VerticalAlignment="Top"/>
-            <Label Content="Cost" HorizontalAlignment="Left" Margin="86,187,0,0" VerticalAlignment="Top"/>
-            <Button x:Name="AddSpare_Button" Content="Add" HorizontalAlignment="Left" Margin="11,254,0,0" VerticalAlignment="Top" Width="50" Click="AddSpare_Button_Click"/>
-            <Button x:Name="EditSpare_Button" Content="Edit" HorizontalAlignment="Left" Margin="77,254,0,0" VerticalAlignment="Top" Width="50" Click="EditSpare_Button_Click"/>
-            <Button x:Name="DeleteSpare_Button" Content="Delete" HorizontalAlignment="Left" Margin="143,254,0,0" VerticalAlignment="Top" Width="50" Click="DeleteSpare_Button_Click"/>
-            <DataGrid x:Name="Spare_DataStorage" HorizontalAlignment="Left" Height="142" Margin="260,123,0,0" VerticalAlignment="Top" Width="194" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Spare_DataStorage_OnSelectionChanged">
+            <TextBox x:Name="SpareNaming_TextBox" HorizontalAlignment="Left" Height="23" Margin="266,113,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <TextBox x:Name="SpareCost_TextBox" HorizontalAlignment="Left" Height="23" Margin="266,171,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+            <Label Content="Naming" HorizontalAlignment="Left" Margin="295,82,0,0" VerticalAlignment="Top"/>
+            <Label Content="Cost" HorizontalAlignment="Left" Margin="308,145,0,0" VerticalAlignment="Top"/>
+            <Button x:Name="AddSpare_Button" Content="Add" HorizontalAlignment="Left" Margin="43,224,0,0" VerticalAlignment="Top" Width="50" Click="AddSpare_Button_Click"/>
+            <Button x:Name="EditSpare_Button" Content="Edit" HorizontalAlignment="Left" Margin="117,224,0,0" VerticalAlignment="Top" Width="50" Click="EditSpare_Button_Click"/>
+            <Button x:Name="DeleteSpare_Button" Content="Delete" HorizontalAlignment="Left" Margin="187,224,0,0" VerticalAlignment="Top" Width="50" Click="DeleteSpare_Button_Click"/>
+            <DataGrid x:Name="Spare_DataStorage" HorizontalAlignment="Left" Height="142" Margin="43,69,0,0" VerticalAlignment="Top" Width="194" IsReadOnly="True" AutoGenerateColumns="False" SelectionChanged="Spare_DataStorage_OnSelectionChanged">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Naming"   Binding="{Binding Path = Naming}"/>
                     <DataGridTextColumn Header="Cost"   Binding="{Binding Path = Cost}"/>

@@ -621,25 +621,7 @@ namespace Diplom
             }
         }
 
-       /* public void EditOrder(OrderModel orderModel)
-        {
-            using (var db = new STOEntities())
-            {
-                var order = db.Order.FirstOrDefault(x => x.ID == orderModel.Id);
-                if (order == null)
-                {
-                    return;
-                }
-                order.ClientID = orderModel.ClientId;
-                order.CarID = orderModel.CarId;
-                order.MechanicID = orderModel.MechanicId;
-                order.DescriptionID = orderModel.DescriptionId;
-                order.Date_Start = orderModel.DateStart;
-                order.Date_End = orderModel.DateEnd;
-                db.SaveChanges();
-            }
-        }*/
-
+       
         public void DeleteOrderFromDb(OrderModel orderModel)
         {
             using (var db = new STOEntities())
@@ -744,6 +726,25 @@ namespace Diplom
             return result;
         }
 
+        public void EditOrder(OrderModel orderModel)
+        {
+            using (var db = new STOEntities())
+            {
+                var order = db.Order.FirstOrDefault(x => x.ID == orderModel.Id);
+                if (order == null)
+                {
+                    return;
+                }
+                order.ClientID = orderModel.Client.Id;
+                order.CarID = orderModel.Car.Id;
+                order.MechanicID = orderModel.Mechanic.Id;
+                order.DescriptionID = orderModel.Description.Id;
+                order.Date_Start = orderModel.DateStart;
+                order.Date_End = orderModel.DateEnd;
+                db.SaveChanges();
+            }
+        }
+
         public void AddDescriptionToDataBase(DescriptionModel descriptionModel)
         {
             using (var db = new STOEntities())
@@ -843,7 +844,7 @@ namespace Diplom
             return result;
         }
 
-        public void DeleteItemsFromOrder(int disId)
+        public void DeleteSparesFromOrder(int disId)
         {
             using (var db = new STOEntities())
             {
@@ -851,14 +852,35 @@ namespace Diplom
                 foreach (var spare in sparesToRemove)
                 {
                     db.Spares_Used.Remove(spare);
-                    db.SaveChanges();
+
                 }
+                db.SaveChanges();
+            }
+        }
+
+        public void DeleteServicesFromOrder(int disId)
+        {
+            using (var db = new STOEntities())
+            {
                 var servicesToRemove = db.Service_Done.Where(x => x.DescriptionID == disId);
                 foreach (var service in servicesToRemove)
                 {
                     db.Service_Done.Remove(service);
-                    db.SaveChanges();
+
                 }
+                db.SaveChanges();
+            }
+        }
+
+        public void EditDescription(DescriptionModel descriptionModel)
+        {
+            using (var db =new STOEntities())
+            {
+                var desc = db.Description.FirstOrDefault(x => x.ID == descriptionModel.Id);
+                desc.Description1 = descriptionModel.Description;
+                desc.CarID = descriptionModel.CarId;
+                desc.MechanicID = descriptionModel.MechanicId;
+                db.SaveChanges();
             }
         }
 

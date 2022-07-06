@@ -1,24 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 using Diplom.Flows.AppFlow.OrderFlow.NewOrder;
 using Diplom.Models;
 
 namespace Diplom.Flows.AppFlow.NewOrder
 {
-    /// <summary>
-    /// Логика взаимодействия для NewOrderWindow.xaml
-    /// </summary>
     public partial class NewOrderWindow : Window
     {
         private readonly NewOrderWindowModel _newOrderWindowModel = new NewOrderWindowModel();

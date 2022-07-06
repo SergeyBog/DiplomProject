@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using Diplom.CarFlow;
 using Diplom.Flows.AppFlow;
 using Diplom.Flows.AppFlow.NewOrder;
+using Diplom.Flows.AppFlow.OrderFlow.Order_description;
 using Diplom.MechanicFlow;
 using Diplom.Models;
 using Diplom.ServiceFlow;
@@ -123,6 +124,11 @@ namespace Diplom
 
         private void SeeDetailsButton_Click(object sender, RoutedEventArgs e)
         {
+            var form = new OrderDescriptionWindow() { Owner = this };
+            form.OrderData = OrderDataStorage.SelectedItem as OrderModel;
+            form.UserName = UserName;
+            form.UserSecondName = UserSecondName;
+            form.ShowDialog();
             OrderDataStorage.SelectedItem = null;
         }
 

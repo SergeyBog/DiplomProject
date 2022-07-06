@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Diplom.Flows.AppFlow.NewOrder"
         mc:Ignorable="d"
-        Title="NewOrderWindow" Height="450" Width="660" Loaded="NewOrderWindow_OnLoaded" Closed="NewOrderWindow_OnClosed">
+        Title="NewOrderWindow" Height="500" Width="900" Loaded="NewOrderWindow_OnLoaded" Closed="NewOrderWindow_OnClosed">
     <Grid>
-        <Label Content="Date Start" HorizontalAlignment="Left" Margin="395,226,0,0" VerticalAlignment="Top"/>
-        <Label Content="Date End" HorizontalAlignment="Left" Margin="546,226,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="ClientsComboBox" HorizontalAlignment="Left" Margin="369,100,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ClientsComboBox_OnSelectionChanged">
+        <Label Content="Date Start" HorizontalAlignment="Left" Margin="344,282,0,0" VerticalAlignment="Top"/>
+        <Label Content="Date End" HorizontalAlignment="Left" Margin="494,282,0,0" VerticalAlignment="Top"/>
+        <ComboBox x:Name="ClientsComboBox" HorizontalAlignment="Left" Margin="318,128,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ClientsComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -20,7 +20,7 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="ClientCarsComboBox" HorizontalAlignment="Left" Margin="520,100,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ClientCarsComboBox_OnSelectionChanged">
+        <ComboBox x:Name="ClientCarsComboBox" HorizontalAlignment="Left" Margin="468,128,0,0" VerticalAlignment="Top" Width="120" SelectionChanged="ClientCarsComboBox_OnSelectionChanged">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel Orientation="Horizontal">
@@ -31,46 +31,46 @@
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <Label Content="Client" HorizontalAlignment="Left" Margin="408,72,0,0" VerticalAlignment="Top"/>
-        <Label Content="Car" HorizontalAlignment="Left" Margin="555,69,0,0" VerticalAlignment="Top"/>
-        <Label Content="Order" HorizontalAlignment="Left" Margin="315,18,0,0" VerticalAlignment="Top" Width="58"/>
-        <Button Content="Register order" x:Name="AddOrderButton" HorizontalAlignment="Left" Margin="440,290,0,0" VerticalAlignment="Top" Width="120" Click="AddOrderButton_Click"/>
-        <DataGrid Name="SpareDataStorage" HorizontalAlignment="Left" Height="100" Margin="43,241,0,0" VerticalAlignment="Top" Width="132" IsReadOnly="True" AutoGenerateColumns="False">
+        <Label Content="Client" HorizontalAlignment="Left" Margin="356,100,0,0" VerticalAlignment="Top"/>
+        <Label Content="Car" HorizontalAlignment="Left" Margin="504,97,0,0" VerticalAlignment="Top"/>
+        <Label Content="Order" HorizontalAlignment="Left" Margin="436,34,0,0" VerticalAlignment="Top" Width="58"/>
+        <Button Content="Register order" x:Name="AddOrderButton" HorizontalAlignment="Left" Margin="388,366,0,0" VerticalAlignment="Top" Width="120" Click="AddOrderButton_Click"/>
+        <DataGrid Name="SpareDataStorage" HorizontalAlignment="Left" Height="120" Margin="652,101,0,0" VerticalAlignment="Top" Width="210" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naming"   Binding="{Binding Path = Naming}"/>
                 <DataGridTextColumn Header="Cost"   Binding="{Binding Path = Cost}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Name="ServiceDataStorage" HorizontalAlignment="Left" Height="100" Margin="43,80,0,0" VerticalAlignment="Top" Width="132" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Name="ServiceDataStorage" HorizontalAlignment="Left" Height="120" Margin="42,101,0,0" VerticalAlignment="Top" Width="210" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naming"   Binding="{Binding Path = Naming}"/>
                 <DataGridTextColumn Header="Cost"   Binding="{Binding Path = Cost}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="AddServiceToOrderButton" Content="Add Service" HorizontalAlignment="Left" Margin="69,191,0,0" VerticalAlignment="Top" Width="75" Click="AddServiceToOrder_Click"/>
-        <Button Name="AddSpareToOrderButton" Content="Add Spare" HorizontalAlignment="Left" Margin="69,360,0,0" VerticalAlignment="Top" Width="75" Click="AddSpareToOrderButton_Click"/>
-        <Label Content="Total Cost" HorizontalAlignment="Left" Margin="476,18,0,0" VerticalAlignment="Top"/>
-        <DataGrid Name="ServiceInOrderDataStorage" HorizontalAlignment="Left" Height="100" Margin="206,80,0,0" VerticalAlignment="Top" Width="133" IsReadOnly="True" AutoGenerateColumns="False">
+        <Button Name="AddServiceToOrderButton" Content="Add Service" HorizontalAlignment="Left" Margin="99,231,0,0" VerticalAlignment="Top" Width="90" Click="AddServiceToOrder_Click"/>
+        <Button Name="AddSpareToOrderButton" Content="Add Spare" HorizontalAlignment="Left" Margin="707,231,0,0" VerticalAlignment="Top" Width="90" Click="AddSpareToOrderButton_Click"/>
+        <Label Content="Total Cost" HorizontalAlignment="Left" Margin="597,34,0,0" VerticalAlignment="Top"/>
+        <DataGrid Name="ServiceInOrderDataStorage" HorizontalAlignment="Left" Height="120" Margin="42,299,0,0" VerticalAlignment="Top" Width="210" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naming"   Binding="{Binding Path = Naming}"/>
                 <DataGridTextColumn Header="Cost"   Binding="{Binding Path = Cost}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <DataGrid Name="SpareInOrderDataStorage" HorizontalAlignment="Left" Height="100" Margin="206,242,0,0" VerticalAlignment="Top" Width="133" IsReadOnly="True" AutoGenerateColumns="False">
+        <DataGrid Name="SpareInOrderDataStorage" HorizontalAlignment="Left" Height="120" Margin="652,299,0,0" VerticalAlignment="Top" Width="210" IsReadOnly="True" AutoGenerateColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Naming"   Binding="{Binding Path = Naming}"/>
                 <DataGridTextColumn Header="Cost"   Binding="{Binding Path = Cost}"/>
             </DataGrid.Columns>
         </DataGrid>
-        <Button Name="RemoveServiceFromOrderButton" Content="Remove Service" HorizontalAlignment="Left" Margin="220,191,0,0" VerticalAlignment="Top" Width="100" Click="RemoveServiceFromOrderButton_Click"/>
-        <Button Name="RemoveSpareFromOrderButton" Content="RemoveSpare" HorizontalAlignment="Left" Margin="220,360,0,0" VerticalAlignment="Top" Width="100" Click="RemoveSpareFromOrderButton_Click"/>
-        <Label Content="Services" HorizontalAlignment="Left" Margin="69,49,0,0" VerticalAlignment="Top"/>
-        <Label Content="Spares" HorizontalAlignment="Left" Margin="69,216,0,0" VerticalAlignment="Top"/>
-        <TextBox Name="DescriptionTextBox" HorizontalAlignment="Left" Height="83" Margin="395,142,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="213"/>
-        <Label Name="TotalCostLabel" Content="" HorizontalAlignment="Left" Margin="476,44,0,0" VerticalAlignment="Top" Width="57"/>
-        <DatePicker Name="DateStartPicker" HorizontalAlignment="Left" Margin="376,252,0,0" VerticalAlignment="Top"/>
-        <DatePicker Name ="DateEndPicker" HorizontalAlignment="Left" Margin="524,252,0,0" VerticalAlignment="Top"/>
-        <Label Content="Description" HorizontalAlignment="Left" Margin="468,120,0,0" VerticalAlignment="Top"/>
-        <Label Name="UserNameInfo" Content="" HorizontalAlignment="Left" Margin="116,18,0,0" VerticalAlignment="Top" Width="102"/>
+        <Button Name="RemoveServiceFromOrderButton" Content="Remove Service" HorizontalAlignment="Left" Margin="99,428,0,0" VerticalAlignment="Top" Width="90" Click="RemoveServiceFromOrderButton_Click"/>
+        <Button Name="RemoveSpareFromOrderButton" Content="RemoveSpare" HorizontalAlignment="Left" Margin="707,428,0,0" VerticalAlignment="Top" Width="90" Click="RemoveSpareFromOrderButton_Click"/>
+        <Label Content="Services" HorizontalAlignment="Left" Margin="117,74,0,0" VerticalAlignment="Top"/>
+        <Label Content="Spares" HorizontalAlignment="Left" Margin="729,74,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.444,0.442"/>
+        <TextBox Name="DescriptionTextBox" HorizontalAlignment="Left" Height="90" Margin="338,194,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="230"/>
+        <Label Name="TotalCostLabel" Content="" HorizontalAlignment="Left" Margin="597,60,0,0" VerticalAlignment="Top" Width="57"/>
+        <DatePicker Name="DateStartPicker" HorizontalAlignment="Left" Margin="324,308,0,0" VerticalAlignment="Top"/>
+        <DatePicker Name ="DateEndPicker" HorizontalAlignment="Left" Margin="472,308,0,0" VerticalAlignment="Top"/>
+        <Label Content="Description" HorizontalAlignment="Left" Margin="416,166,0,0" VerticalAlignment="Top"/>
+        <Label Name="UserNameInfo" Content="" HorizontalAlignment="Left" Margin="237,34,0,0" VerticalAlignment="Top" Width="102"/>
     </Grid>
 </Window>
